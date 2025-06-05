@@ -19,6 +19,7 @@
             Student[] students = new Student[mxstudents];
             string[] subjects = {"English Language", "English Literature", "Mathematics", "Biology", "Chemistry", "Physics", "History", "Geography", "Religious Studies", "Spanish", "French", "Art & Design", "Business", "Computer Science", "Drama", "Food Preparation and Nutrition", "DT Graphics", "Music", "Physical Education", "DT Resistant Materials"};
             int mxsubjects = subjects.Length;
+            int[,] grades = new int[mxstudents, mxsubjects];
         }
     }
 }
