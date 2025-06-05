@@ -20,6 +20,7 @@
             string[] subjects = {"English Language", "English Literature", "Mathematics", "Biology", "Chemistry", "Physics", "History", "Geography", "Religious Studies", "Spanish", "French", "Art & Design", "Business", "Computer Science", "Drama", "Food Preparation and Nutrition", "DT Graphics", "Music", "Physical Education", "DT Resistant Materials"};
             int mxsubjects = subjects.Length;
             int[,] grades = new int[mxstudents, mxsubjects];
+            int studentcnt = 0;
             while (true) {
                 Console.WriteLine("Options");
                 Console.WriteLine("1 for Add a Student.");
@@ -29,6 +30,20 @@
                 string? choice = Console.ReadLine()?.Trim();
                 switch (choice) {
                     case "1":
+                        if (studentcnt < mxstudents) {
+                            Console.WriteLine("Enter Student Name.");
+                            string nam = Console.ReadLine();
+                            Console.WriteLine("Enter Student ID.");
+                            int sid = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Enter Student Form Group.");
+                            string sfg = Console.ReadLine();
+                            studentcnt += 1;
+                            students[studentcnt-1].name = nam;
+                            students[studentcnt-1].id = sid;
+                            students[studentcnt-1].form_group = sfg;
+                        } else {
+                            Console.WriteLine("\nError. Maximum student limit reached. Please upgrade to Pro Version.");
+                        }
                         break;
                     case "2":
                         break;
