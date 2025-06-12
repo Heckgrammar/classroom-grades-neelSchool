@@ -46,6 +46,25 @@
                         }
                         break;
                     case "2":
+                        Console.WriteLine("Enter Student ID.");
+                        int sid = Convert.ToInt32(Console.ReadLine());
+                        bool sfnd = false;
+                        for (int i = 0; i < mxstudents; ++i) {
+                            if (students[i].id == sid) {
+                                sfnd = true;
+                                for (int j = 0; j < mxsubjects; ++j) {
+                                    Console.WriteLine($"Please enter a grade for {subjects[j]}.");
+                                    int subgrade = Convert.ToInt32(Console.ReadLine());
+                                    if (subgrade > 100 || subgrade < 0) {
+                                        Console.WriteLine("Invalid grade entered. Retry with a numebr between 0 and 100.");
+                                        --j;
+                                    }
+                                    grades[studentcnt-1,j] = subgrade;
+                                } else {
+                                    Console.WriteLine("Student ID not found. Create the student in database first.");
+                                }
+                            }
+                        }
                         break;
                     case "3":
                         break;
