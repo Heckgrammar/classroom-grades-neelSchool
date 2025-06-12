@@ -67,6 +67,10 @@
                         }
                         break;
                     case "3":
+                        Console.WriteLine("Beginning of grade listing for all students.");
+                        for (int i = 0; i < mxstudents; ++i) {
+                            Console.WriteLine($"");
+                        }
                         break;
                     case "0":
                         Console.WriteLine("Exiting program.");
